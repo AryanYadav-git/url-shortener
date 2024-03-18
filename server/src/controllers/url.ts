@@ -19,7 +19,7 @@ export const createUrl = async(req:express.Request, res:express.Response) => {
 export const getUrl = async(req:express.Request, res:express.Response) => {
     try {
         const { slug } = req.params;
-        const urlFound = await urlModel.findOne({slug});
+        const urlFound = await urlModel.findOne({slug:`http://localhost:8080/api/${slug}`});
         if(!urlFound) {
             res.status(404).send({"message": "Url Not Found"});
         }

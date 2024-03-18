@@ -9,7 +9,7 @@ const UrlSchema = new mongoose.Schema({
     slug: {
         type:String,
         required:true,
-        default: () => nanoid().substring(0,8)
+        default: () => "http://localhost:8080/api/"+nanoid().substring(0,8)
     }
 },{
     timestamps:true,
